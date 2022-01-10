@@ -1,14 +1,17 @@
 [
   {
-    "name": "Don't Write Your Passwords Down",
-    "description": "In the age of information being more valuable than presious metals, it is imparitive you do not share log in credentials with anyone. Writing your password down on a post-it and sticking it to the bottom of your keyboard it a big no-no!"
+    "name": "Music Near Me",
+    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "needed_funding": 5000
   },
   {
-    "name": "Stay Away From Sus Websited",
-    "description": "Browsing the web is a lot like walking through a densly populated city. There are countless people and business to interact with but you know better than to interact with the sus ones"
+    "name": "The Ultimate Tech Quiz",
+    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "needed_funding": 10000
   },
   {
-    "name": "If You Don't Know What You're Doing, Buy an iPad",
-    "description": "For the last time, Grandma doesn't need a new computer. You have cleared CandyCrush Saga mailware off of her system too many times. It's time to get her a device that she will have a harder time ruining"
+    "name": "Roll 'Em Up",
+    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "needed_funding": 800
   }
 ]
