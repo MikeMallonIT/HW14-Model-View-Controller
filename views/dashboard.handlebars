@@ -1,30 +1,30 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2>{{username}}'s Dashboard</h2>
   </div>
 </div>
 
 <div class="row mt-4">
 
-<a href="/newpost">New Post</a>
-
   {{#if posts.length}}
-  <div class="col-md-6 post-list">
+  <div class="col-md-10 post-list">
     <h3>Current Posts:</h3>
     {{#each posts as |post|}}
     <div class="row mb-3">
-      <div class="col-md-8">
+      <div class="col-md-6">
         <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      <div class="col-md-6">
+        <h4>{{format_date date_created}}</h4>
       </div>
     </div>
     {{/each}}
-    
   </div>
   {{/if}}
+       
 </div>
 
-<script src="./js/dashboard.js"></script>
+<a href="/newpost"><button class="btn btn-primary">New Post</button></a>
+
+
 

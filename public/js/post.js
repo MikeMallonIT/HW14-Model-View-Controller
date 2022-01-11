@@ -1,5 +1,6 @@
-
 const delButtonHandler = async (event) => {
+  alert('Delete Button Pushed');
+  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -8,7 +9,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/post');
     } else {
       alert('Failed to delete post');
     }
@@ -16,5 +17,5 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.post-list')
+  .querySelector('.selected-post')
   .addEventListener('click', delButtonHandler);
