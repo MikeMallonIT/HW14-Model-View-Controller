@@ -4,24 +4,26 @@
     <p>{{description}}</p>
     <p>Created by {{user.username}} on {{format_date date_created}}</p>
 
-
-    <p>
-      <!--<button class="btn btn-primary">Submit Comment</button>-->
-    </p> 
-
       <div>
             <p>Post ID: {{id}}</p>
-      <!--<button class="btn btn-sm btn-primary" data-id="{{id}}">Edit Post</button>-->
 
       </div>
 
   </div>
-  {{#each comment as |comment| }}
+  
+    {{#if comments.length}}
+    <h3>Current comments:</h3>
+    {{#each comments as |comment|}}
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <h4>Text :{{text}}</h4>
+        <h4>Created on :{{format_date date_created}}</h4>
+        <h4>Created by :{{comment.user_id}}</h4>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
 
-    <p>Commented by {{comment.user.username}} on {{format_date comment.date_created}}</p>
-
-
-  {{/each}}
 
   <div>
     <div class="col-md-6">

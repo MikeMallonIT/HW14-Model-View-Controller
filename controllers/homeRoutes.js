@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -92,15 +92,16 @@ router.get('/newpost', withAuth, async (req, res) => {
 router.get('/newComment/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
+      attributes: { exclude: ['password']},
       include: [
-        {
-          model: User,
-          //attributes: ['name'],
-        },
-      ],
+        Comment,
+        {model: User}],
     });
 
+    //const commentData = await Comment.findAll({ });
+
     const post = postData.get({ plain: true });
+    //const comment = commentData.map((comment) => comment.get({plain: true}));
 
     res.render('newComment', {
       ...post,
@@ -110,7 +111,6 @@ router.get('/newComment/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 
 router.get('/login', (req, res) => {
