@@ -2,11 +2,11 @@
     {
       "text": "Default comment for post 1",
       "post_id": 1,
-      "username": "lernantinoator"
+      "user_id": 2
     },
     {
         "text": "Default comment for post 2",
         "post_id": 2,
-        "username": "salsburrysteak"
+        "user_id": 1
       }
   ]

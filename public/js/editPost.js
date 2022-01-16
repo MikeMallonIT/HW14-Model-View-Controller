@@ -1,3 +1,4 @@
+// Handles deleting a blog post
 const delButtonHandler = async (event) => {
   alert('Post Deleted');
   if (event.target.hasAttribute('data-id')) {
@@ -15,6 +16,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// Handles updating a blog post
 const updateButtonHandler = async (event) => {
 
   const name = document.querySelector('#name').value.trim();

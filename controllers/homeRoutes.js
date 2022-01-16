@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Display the homepage
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
@@ -9,7 +10,6 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          //attributes: ['name'],
         },
       ],
     });
@@ -27,13 +27,13 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get a post by a given id which will allow a user to delete or update one of their posts
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          //attributes: ['name'],
         },
       ],
     });
@@ -49,7 +49,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Display the user's dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -69,7 +69,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Display the new post page
 router.get('/newpost', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -89,6 +89,7 @@ router.get('/newpost', withAuth, async (req, res) => {
   }
 });
 
+// Display the new comments page
 router.get('/newComment/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -96,12 +97,9 @@ router.get('/newComment/:id', async (req, res) => {
       include: [
         Comment,
         {model: User}],
+
     });
-
-    //const commentData = await Comment.findAll({ });
-
     const post = postData.get({ plain: true });
-    //const comment = commentData.map((comment) => comment.get({plain: true}));
 
     res.render('newComment', {
       ...post,

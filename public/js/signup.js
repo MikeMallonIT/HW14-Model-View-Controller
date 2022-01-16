@@ -1,3 +1,4 @@
+// Add new user handler
 const signupFormHandler = async (event) => {
     event.preventDefault();
   

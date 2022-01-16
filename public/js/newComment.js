@@ -1,3 +1,4 @@
+// New comment handler
 const newFormHandler = async (event) => {
   event.preventDefault();
   
@@ -22,9 +23,6 @@ const newFormHandler = async (event) => {
     }
   };
 
-  function test(){
-    alert(`Post Updated`);  
-  }
 
   document
   .querySelector('.signup-form')

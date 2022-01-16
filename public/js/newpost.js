@@ -1,3 +1,4 @@
+// New blog post handler
 const newFormHandler = async (event) => {
     event.preventDefault();
   
